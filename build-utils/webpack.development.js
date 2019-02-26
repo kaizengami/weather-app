@@ -2,29 +2,29 @@ module.exports = () => ({
   module: {
     rules: [
       {
-        test:/\.css$/,
-        use:['style-loader','css-loader']
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"]
       },
       {
-        test: /\.sass$/,
+        test: /\.scss$/,
         use: ["style-loader", "css-loader", "sass-loader"]
       },
       {
         test: /\.(mov|mp4|jpg)$/,
         use: [
           {
-            loader: 'file-loader',
+            loader: "file-loader",
             options: {
-              name: '[path][name].[ext]'
-            }  
+              name: "[path][name].[ext]"
+            }
           }
         ]
       },
       {
-        test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+        test: /\.(gif|png|woff|woff2|eot|ttf|svg)$/,
         use: [
           {
-            loader: 'url-loader',
+            loader: "url-loader",
             options: {
               limit: 8192
             }
