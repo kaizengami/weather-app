@@ -1,0 +1,18 @@
+:root {
+  --color-white: #fff;
+  --color-white-hover: rgb(195, 213, 241);
+
+  //search
+  --search-text-color: var(--color-white);
+  --search-text-color-hover: var(--color-white-hover);
+  --search-caret-color: #ffffff;
+  --search-placeholder-color: rgba(255, 255, 255, 0.7);
+  --search-placeholder-color-hover: rgba(255, 255, 255, 0.3);
+
+  //current-forecast
+  --current-forecast-color: var(--color-white);
+
+  //daily-forecast
+  --daily-forecast-color: var(--color-white);
+  --daily-forecast-bg-color: #0a1949;
+}

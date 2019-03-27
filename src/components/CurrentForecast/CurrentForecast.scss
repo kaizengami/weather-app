@@ -1,0 +1,13 @@
+.current-forecast {
+  position: absolute;
+  margin-top: 250px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  font-size: 150px;
+  color: var(--current-forecast-color);
+}
+
+.current-forecast::after {
+  position: absolute;
+  content: '°';
+}
