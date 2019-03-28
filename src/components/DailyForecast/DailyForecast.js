@@ -9,7 +9,21 @@ class Search extends Component {
     };
     this.host = document.createElement('div');
     this.host.setAttribute('class', 'daily-forecast');
-    this.host.innerHTML = 'DailyForecast asd asd asd asdasdasd';
+    this.host.innerHTML = `<button class="daily-forecast-button">
+                            <div class="daily-forecast-day">tuesday</div>
+                            <div class="daily-forecast-col">
+                              <div class="daily-forecast-humidity">icon 57%</div>
+                              <div class="daily-forecast-precip">icon 0mm</div>
+                            </div>
+                            <div class="daily-forecast-col">
+                              <div class="daily-forecast-wind-icon">icon</div>
+                              <div class="daily-forecast-wind">3<span>m/s</span></div>
+                            </div>
+                            <div class="daily-forecast-col">
+                              <div class="daily-forecast-weather-icon">icon</div>
+                              <div class="daily-forecast-temperature">17</div>
+                            </div>
+                          </button>`;
   }
 
   render() {

@@ -15,6 +15,7 @@ class Search extends Component {
     this.host.setAttribute('autocomplete', 'off');
     this.host.setAttribute('placeholder', 'City, place or country...');
     this.host.addEventListener('input', this.centerInput.bind(this));
+    this.host.addEventListener('keyup', this.onKeyup.bind(this));
   }
 
   centerInput() {
@@ -22,6 +23,13 @@ class Search extends Component {
     //favorite.iconHide();
     if (this.host.value.length > 0) this.host.style.left = '50%';
     else this.host.style.left = 'calc(50% - 160px)';
+  }
+
+  onKeyup() {
+    //console.log(this.state);
+    if (event.keyCode == 13) {
+      this.props.onSubmit(this.state);
+    }
   }
 
   render() {

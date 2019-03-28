@@ -3,11 +3,22 @@
   margin-top: 250px;
   left: 50%;
   transform: translate(-50%, 0);
-  font-size: 150px;
   color: var(--current-forecast-color);
 }
 
-.current-forecast::after {
+.current-forecast-temperature {
+  font-size: 150px;
+}
+
+.current-forecast-temperature::after {
   position: absolute;
   content: '°';
+  font-weight: 300;
+}
+
+.current-forecast-day {
+  font-size: 40px;
+  font-weight: 300;
+  text-transform: capitalize;
+  text-align: center;
 }

@@ -1,0 +1,31 @@
+@font-face {
+  font-family: 'Campton';
+  src: local('../fonts/Campton-Light'),
+    url('../fonts/Campton-Light.woff') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Campton';
+  src: local('../fonts/Campton-Medium'),
+    url('../fonts/Campton-Medium.woff') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Campton';
+  src: local('../fonts/Campton-SemiBold'),
+    url('../fonts/Campton-SemiBold.woff') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Campton';
+  src: local('../fonts/Campton-Bold'),
+    url('../fonts/Campton-Bold.woff') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}

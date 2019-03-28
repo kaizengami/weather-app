@@ -6,9 +6,8 @@
   display: flex;
   left: calc(50% - 160px);
   transform: translate(-50%, 0);
-  font-family: Helvetica;
-  font-weight: 500;
-  font-size: 43px;
+  font-weight: 400;
+  font-size: 40px;
   border-width: 0px;
   width: 120%;
   outline: none;
@@ -35,7 +34,7 @@ input {
 
 input::placeholder {
   font-size: 32px;
-  padding-left: 335px;
+  padding-left: 350px;
   color: var(--search-placeholder-color);
 }
 

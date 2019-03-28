@@ -15,26 +15,19 @@ class App extends Component {
       day: true
     });
     this.search = new Search({
-      city: 'Kyiv' //this.state.city
+      city: 'Kyiv', //this.state.city
+      onSubmit: this.onSubmit.bind(this)
     });
     this.currentForecast = new CurrentForecast();
     this.dailyForecast = new DailyForecast();
   }
-  onSearchSubmit(coord, city) {
-    getWeather(coord[0], coord[1])
-      .then(weather => {
-        city = weather.city_name;
-        this.updateState({
-          weather,
-          coord,
-          city
-        });
-        window.history.pushState(null, null, `?city=${weather.city_name}`);
-        swapFC();
-      })
-      .catch(error => {
-        console.log(error);
-      });
+  onSubmit(city) {
+    console.log('submit!');
+    // getWeather(city).then((data) => {
+    //     this.updateState(data, city, 'today')
+    // }).catch(function(err) {
+    //     alert('Something went wrong with weather server. Try again, please', err);
+    // });
   }
   updateState(data, city, period) {
     this.render();
@@ -43,7 +36,6 @@ class App extends Component {
   render() {}
 
   init(host) {
-    console.log(this.search);
     let fragment = document.createDocumentFragment();
     fragment.appendChild(this.appBackground.render());
     fragment.appendChild(this.search.render());

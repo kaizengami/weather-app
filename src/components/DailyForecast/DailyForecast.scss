@@ -1,11 +1,52 @@
 .daily-forecast {
   position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   height: auto;
   width: 100%;
-  margin-top: calc(100vh - 160px);
-  left: 50%;
-  transform: translate(-50%, 0);
-  font-size: 50px;
+  margin-top: calc(100vh - 130px);
+  font-size: 40px;
+  font-weight: 300;
   color: var(--daily-forecast-color);
   background-color: var(--daily-forecast-bg-color);
+}
+
+.daily-forecast-button {
+  display: flex;
+  justify-content: space-between;
+  width: 800px;
+}
+
+.daily-forecast-button:hover {
+  opacity: 0.7;
+}
+
+.daily-forecast-button:not(:first-child) {
+  margin-top: 40px;
+}
+
+.daily-forecast-button div {
+  //padding-left: 20px;
+}
+
+.daily-forecast-day {
+  text-transform: capitalize;
+}
+
+.daily-forecast-col {
+  margin-top: -15px;
+  font-size: 36px;
+}
+
+.daily-forecast-humidity,
+.daily-forecast-precip,
+.daily-forecast-wind-icon,
+.daily-forecast-wind {
+  opacity: 0.7;
+}
+
+.daily-forecast-weather-icon,
+.daily-forecast-temperature {
+  opacity: 1;
 }
