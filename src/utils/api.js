@@ -18,6 +18,31 @@ let settings = {
   celsius: '°C'
 };
 
+const API_KEY = '&key=4e4006dc280346f9ab2a2471ffc67574';
+const CURRENT_FORECAST_URL = `https://api.weatherbit.io/v2.0/forecast/hourly?city=`; //two day hourly
+const DAILY_FORECAST_URL = `https://api.weatherbit.io/v2.0/forecast/daily?city=`; // 16 day forecast
+const UNITS = '&units=M';
+
+const get = async url => {
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(response.statusText);
+    }
+    let data = await response.json();
+    return data;
+  } catch (err) {
+    return err;
+  }
+};
+
+export const getCurrentForecast = city =>
+  get(CURRENT_FORECAST_URL + city + UNITS + API_KEY);
+export const getDailyForecast = city =>
+  get(DAILY_FORECAST_URL + city + UNITS + API_KEY);
+export const getForecast = city =>
+  Promise.all([getCurrentForecast(city), getDailyForecast(city)]);
+
 const search = () => {
   fetch(
     settings.weather_link + this.user_search + settings.temperature + api.key

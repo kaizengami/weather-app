@@ -1,4 +1,5 @@
 import { Component } from '../Samsklepav';
+import { getForecast } from '../utils/api';
 import { AppBackground } from './AppBackground/';
 import { Search } from './Search/';
 import { CurrentForecast } from './CurrentForecast/';
@@ -8,6 +9,7 @@ class App extends Component {
   constructor(host) {
     super(host);
     this.state = {
+      data: null,
       city: null
     };
     this.host = host;
@@ -15,21 +17,20 @@ class App extends Component {
       day: true
     });
     this.search = new Search({
-      city: 'Kyiv', //this.state.city
       onSubmit: this.onSubmit.bind(this)
     });
     this.currentForecast = new CurrentForecast();
     this.dailyForecast = new DailyForecast();
   }
-  onSubmit(city) {
-    console.log('submit!');
-    // getWeather(city).then((data) => {
-    //     this.updateState(data, city, 'today')
-    // }).catch(function(err) {
-    //     alert('Something went wrong with weather server. Try again, please', err);
-    // });
+  async onSubmit(city) {
+    let weather = await getForecast(city);
+    this.updateState(city, weather);
+    console.log(weather);
   }
-  updateState(data, city, period) {
+  updateState(city, data) {
+    this.state.city = city;
+    this.state.data = data;
+    console.log(this.state);
     this.render();
   }
 
