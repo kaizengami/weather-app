@@ -22,8 +22,9 @@ class Search extends Component {
   centerInput() {
     //dom.search.classList.remove('search-active');
     //favorite.iconHide();
-    if (this.host.value.length > 0) this.host.style.left = '50%';
-    else this.host.style.left = 'calc(50% - 160px)';
+    if (this.host.value.length > 0) this.host.classList.add('search-not-empty');//this.host.style.left = '50%';
+    //else this.host.style.left = 'calc(50% - 160px)';
+    else this.host.classList.remove('search-not-empty');
   }
 
   onKeyup() {

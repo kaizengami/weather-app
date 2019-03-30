@@ -22,3 +22,17 @@
   text-transform: capitalize;
   text-align: center;
 }
+
+@media only screen and (min-width: 1030px) and (max-width: 1366px)  {
+  .current-forecast {
+    margin-top: 100px;
+  }
+  
+  .current-forecast-temperature {
+    font-size: 120px;
+  }
+
+  .current-forecast-day {
+    font-size: 26px;
+  }
+}

@@ -41,3 +41,21 @@ input::placeholder {
 input:hover::placeholder {
   color: var(--search-placeholder-color-hover);
 }
+
+.search-not-empty{
+  left: calc(50%) !important;
+}
+
+@media only screen and (min-width: 1030px) and (max-width: 1366px)  {
+  #search {
+    margin-top: 10px;
+    font-size: 32px;
+    left: calc(50% - 110px);
+  }
+
+  input::placeholder {
+    font-size: 22px;
+    padding-left: 240px;
+    color: var(--search-placeholder-color);
+  }
+}
