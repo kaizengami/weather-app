@@ -9,6 +9,9 @@ class Search extends Component {
     };
     this.host = document.createElement('div');
     this.host.setAttribute('class', 'daily-forecast');
+  }
+
+  render(host) {
     this.host.innerHTML = `<button class="daily-forecast-button">
                             <div class="daily-forecast-day">tuesday</div>
                             <div class="daily-forecast-col">
@@ -24,10 +27,7 @@ class Search extends Component {
                               <div class="daily-forecast-temperature">17</div>
                             </div>
                           </button>`;
-  }
-
-  render() {
-    return this.host;
+    host.appendChild(this.host);
   }
 }
 

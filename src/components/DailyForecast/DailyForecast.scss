@@ -15,7 +15,7 @@
 .daily-forecast-button {
   display: flex;
   justify-content: space-between;
-  width: 600px;
+  width: 800px;
 }
 
 .daily-forecast-button:hover {
@@ -51,11 +51,16 @@
   opacity: 1;
 }
 
-@media only screen and (min-width: 1030px) and (max-width: 1366px)  {
+@media only screen and (min-width: 1030px) and (max-width: 1366px) {
   .daily-forecast {
     margin-top: calc(100vh - 70px);
     font-size: 30px;
   }
+
+  .daily-forecast-button {
+    width: 600px;
+  }
+
   .daily-forecast-col {
     font-size: 20px;
     margin-top: -5px;

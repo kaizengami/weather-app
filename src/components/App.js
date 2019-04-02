@@ -10,41 +10,44 @@ class App extends Component {
     super(host);
     this.state = {
       data: null,
-      city: null
+      city: 'Kyiv, UA'
     };
     this.host = host;
     this.appBackground = new AppBackground({
       day: true
     });
-    this.search = new Search({
-      onSubmit: this.onSubmit.bind(this)
-    });
+    this.search = new Search();
     this.currentForecast = new CurrentForecast();
     this.dailyForecast = new DailyForecast();
   }
+
   async onSubmit(city) {
-    let weather = await getForecast(city);
-    this.updateState(city, weather);
-    console.log(weather);
+    let data = await getForecast(city);
+    this.updateState(city, data);
+    console.log(this.state);
   }
+
   updateState(city, data) {
     this.state.city = city;
     this.state.data = data;
-    console.log(this.state);
     this.render();
   }
 
-  render() {}
+  render() {
+    this.currentForecast.render(this.host);
+    this.dailyForecast.render(this.host);
+  }
 
   init(host) {
     let fragment = document.createDocumentFragment();
     fragment.appendChild(this.appBackground.render());
-    fragment.appendChild(this.search.render());
-    fragment.appendChild(this.currentForecast.render());
-    fragment.appendChild(this.dailyForecast.render());
+    fragment.appendChild(
+      this.search.update({ onSubmit: this.onSubmit.bind(this) })
+    );
+    //fragment.appendChild(this.currentForecast.render());
+    //fragment.appendChild(this.dailyForecast.render());
     host.appendChild(fragment);
-
-    //host.innerHTML = this.appBackground.render() + this.search.render();
+    console.log(this.search);
   }
 }
 

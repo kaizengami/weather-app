@@ -17,17 +17,17 @@
 }
 
 .current-forecast-day {
-  font-size: 40px;
+  font-size: 36px;
   font-weight: 300;
   text-transform: capitalize;
   text-align: center;
 }
 
-@media only screen and (min-width: 1030px) and (max-width: 1366px)  {
+@media only screen and (min-width: 1030px) and (max-width: 1366px) {
   .current-forecast {
     margin-top: 100px;
   }
-  
+
   .current-forecast-temperature {
     font-size: 120px;
   }

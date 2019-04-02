@@ -8,32 +8,25 @@ class Search extends Component {
     this.state = {
       isValid: true
     };
-
-    this.host = document.createElement('input');
-    this.host.setAttribute('id', 'search');
-    this.host.setAttribute('name', 'search');
-    this.host.setAttribute('type', 'text');
-    this.host.setAttribute('autocomplete', 'off');
-    this.host.setAttribute('placeholder', 'City, place or country...');
+    this.host = document.createElement('div');
+    this.host.classList.add('search-container');
     this.host.addEventListener('input', this.centerInput.bind(this));
     this.host.addEventListener('keyup', this.onKeyup.bind(this));
   }
 
   centerInput() {
-    //dom.search.classList.remove('search-active');
-    //favorite.iconHide();
-    if (this.host.value.length > 0) this.host.classList.add('search-not-empty');//this.host.style.left = '50%';
-    //else this.host.style.left = 'calc(50% - 160px)';
-    else this.host.classList.remove('search-not-empty');
+    const search = document.getElementById('search');
+
+    if (search.value.length > 0) search.classList.add('search-not-empty');
+    else search.classList.remove('search-not-empty');
   }
 
   onKeyup() {
-    //console.log(this.state);
     if (event.keyCode == 13) {
       const city = event.target.value.trim();
+      console.log(this.props);
       if (this.isValidCityName(city)) {
         this.props.onSubmit(city);
-
         if (!this.state.isValid) {
           this.updateState({ isValid: true });
         }
@@ -48,7 +41,10 @@ class Search extends Component {
   }
 
   render() {
-    return this.host;
+    return `<input id="search" 
+             name="search" type="text" 
+             autocomplete="off" 
+             placeholder="City, place or country...">`;
   }
 }
 
