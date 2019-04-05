@@ -11,8 +11,10 @@ class Search extends Component {
     this.host.setAttribute('class', 'current-forecast');
   }
 
-  render(host) {
-    this.host.innerHTML = `<div class="current-forecast-temperature">26</div>
+  render(host, data) {
+    this.host.innerHTML = `<div class="current-forecast-temperature">${
+      data[0].data[0].app_temp
+    }</div>
                            <div class="current-forecast-day">monday</div>`;
     host.appendChild(this.host);
   }

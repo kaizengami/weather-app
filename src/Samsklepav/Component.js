@@ -18,16 +18,12 @@ class Component {
   _render() {
     const children = this.render();
     this.host.innerHTML = '';
-    console.log(typeof children);
     if (typeof children === 'string') {
       this.host.innerHTML = children;
-      console.log('children === string');
     } else if (Array.isArray(children)) {
       this.host.append(...children);
-      console.log('Array.isArray(children)');
     } else {
       this.host.append(children);
-      console.log('this.host.append(children);');
     }
     return this.host;
   }

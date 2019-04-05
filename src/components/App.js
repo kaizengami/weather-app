@@ -34,11 +34,11 @@ class App extends Component {
   }
 
   render() {
-    this.currentForecast.render(this.host);
-    this.dailyForecast.render(this.host);
+    this.currentForecast.render(this.host, this.state.data);
+    this.dailyForecast.render(this.host, this.state.data);
   }
 
-  init(host) {
+  init() {
     let fragment = document.createDocumentFragment();
     fragment.appendChild(this.appBackground.render());
     fragment.appendChild(
@@ -46,8 +46,7 @@ class App extends Component {
     );
     //fragment.appendChild(this.currentForecast.render());
     //fragment.appendChild(this.dailyForecast.render());
-    host.appendChild(fragment);
-    console.log(this.search);
+    this.host.appendChild(fragment);
   }
 }
 
