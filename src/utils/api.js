@@ -1,5 +1,5 @@
 const api = {
-  key: '&key=4e4006dc280346f9ab2a2471ffc67574',
+  key: '&key=cef87252b82546d283d1edb0feb1993b',
   //currentWeatherLink : 'https://api.weatherbit.io/v2.0/current?city=Raleigh,NC&key=',
   two_day_hourly_link: 'https://api.weatherbit.io/v2.0/forecast/hourly?city=',
   five_day_link: 'https://api.weatherbit.io/v2.0/forecast/3hourly?city=',
@@ -18,8 +18,9 @@ let settings = {
   celsius: '°C'
 };
 
-const API_KEY = '&key=4e4006dc280346f9ab2a2471ffc67574';
-const CURRENT_FORECAST_URL = `https://api.weatherbit.io/v2.0/forecast/hourly?city=`; //two day hourly
+const API_KEY = '&key=cef87252b82546d283d1edb0feb1993b';
+// const CURRENT_FORECAST_URL = `https://api.weatherbit.io/v2.0/forecast/hourly?city=`; //two day hourly
+const CURRENT_FORECAST_URL = `https://api.weatherbit.io/v2.0/current?city=`; //two day hourly
 const DAILY_FORECAST_URL = `https://api.weatherbit.io/v2.0/forecast/daily?city=`; // 16 day forecast
 const UNITS = '&units=M';
 
