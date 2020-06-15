@@ -15,6 +15,8 @@ class Search extends Component {
   createModel(data) {
     const hourlyData = data[0].data;
     const dailyData = data[1].data;
+    console.log(dailyData);
+    console.log(data);
     let DailyForecastData = dailyData.map(day => new DailyForecastModel(day));
     return DailyForecastData;
   }
@@ -28,11 +30,12 @@ class Search extends Component {
       windSpeed,
       weatherIcon,
       tempMax,
-      tempMin
+      tempMin,
+      dayOfWeek
     } = weather;
 
     return `<button class="daily-forecast-button">
-              <div class="daily-forecast-day">tuesday</div>
+              <div class="daily-forecast-day">${dayOfWeek}</div>
               <div class="daily-forecast-col">
                 <div class="daily-forecast-humidity">icon ${humidity}%</div>
                 <div class="daily-forecast-precip">icon ${precip}mm</div>

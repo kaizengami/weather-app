@@ -1,6 +1,6 @@
 class DailyForecast {
   constructor(data) {
-    //this.dayOfWeek = dayOfWeek(data.datetime);
+    this.dayOfWeek = this.getDayOfWeek(data.datetime);
     //this.dayOfMonth = dayOfMonth(data.datetime);
     this.humidity = Math.round(data.rh);
     this.precip = Math.round(data.precip);
@@ -10,7 +10,15 @@ class DailyForecast {
     this.tempMax = Math.round(data.max_temp);
     this.tempMin = Math.round(data.min_temp);
   }
-  dayOfWeek(datetime) {}
+
+  getDayOfWeek(datetime) {
+    let current = new Date(datetime);
+    let today = new Intl.DateTimeFormat('en-US', { weekday: 'long' }).format(
+      current
+    );
+
+    return today;
+  }
   dayOfMonth(datetime) {}
   weatherIcon(icon) {
     let time;
